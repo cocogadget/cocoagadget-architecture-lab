@@ -4,7 +4,27 @@
 
 This repository is a longitudinal engineering and architecture laboratory.
 
-The portfolio is designed to develop and demonstrate technical judgment across:
+# Opening Portfolio Progression
+
+Project 1:
+**Engineer & Establish Trust**
+
+Can I turn imperfect source data into a trustworthy data product?
+
+↓
+
+Project 2:
+**Investigate & Control**
+
+Something is wrong. Can I determine where the failure originated, how it propagated, and how to prevent recurrence?
+
+↓
+
+Project 3:
+**Evaluate & Decide**
+
+Now that I understand the system and its failures, what should the organization do?
+
 
 - Data and analytics
 - Data engineering
@@ -22,65 +42,114 @@ Projects are not intended to demonstrate isolated tools.
 They are designed to show increasing ability to understand systems, identify problems, investigate failures, evaluate tradeoffs, and make defensible technical and business decisions.
 
 ---
-
-# Project 1 — Healthcare Access Data & Operations Analysis
+# Project 1 — Healthcare Patient Access Data Pipeline
 
 ## Theme
-Analyze & Establish Trust
+
+Engineer & Establish Trust
 
 ## Core Question
 
-Can I produce a trustworthy business conclusion from imperfect operational data?
+Can I transform imperfect healthcare operational data into a trustworthy, analysis-ready data product?
 
 ## Business Context
 
-Analyze healthcare access and referral operations to understand:
+Build a healthcare patient-access data pipeline that integrates operational data related to:
 
-- Referral throughput
-- Scheduling delays
-- Operational bottlenecks
-- Specialty/provider variation
-- Patient access performance
-- Whether operational targets are being met
+* Referrals
+* Appointments and scheduling
+* Providers and specialties
+* Patient access events
+* Insurance or authorization activity
+* Operational targets and service levels
+
+The project will begin with imperfect source data and progressively create a validated, transformed, and curated data layer that can support reliable downstream analysis.
 
 ## Primary Learning Objectives
 
-### Data
-- Explore and clean operational data
-- Develop SQL skills
-- Perform joins and aggregations
-- Identify missing, duplicate, inconsistent, or questionable records
-- Understand how data quality affects conclusions
+### Data Engineering
+
+* Ingest operational data from multiple source files or tables
+* Develop and strengthen SQL skills
+* Perform joins, transformations, and aggregations
+* Standardize fields and data types
+* Identify and handle missing, duplicate, inconsistent, or invalid records
+* Apply business rules during transformation
+* Create staged and curated datasets
+* Validate record counts and transformation results
+* Prepare trusted data for downstream analytical use
 
 ### Architecture
-- Identify where the data originates
-- Document how information reaches the analytical layer
-- Create a simple data-flow representation
 
-### Controls
-- Define basic validation checks
-- Determine what should be verified before metrics are trusted
-- Document reconciliation or quality checks
+* Identify where each source dataset originates
+* Document movement from source data to ingestion, staging, transformation, and curated layers
+* Create a data-flow representation
+* Define relationships and dependencies between datasets
+* Begin documenting data lineage
+
+### Data Quality & Controls
+
+* Define validation checks at important pipeline stages
+* Detect duplicates, nulls, invalid values, and broken relationships
+* Reconcile source and transformed record counts where appropriate
+* Determine what must be verified before curated data is released for use
+* Document failed quality checks and remediation decisions
 
 ### Governance
-- Identify ownership of important data and metric definitions
-- Define terms such as "referral completed"
-- Consider escalation when data cannot be trusted
+
+* Identify ownership of important data elements
+* Define important business terms such as "referral completed"
+* Document metric and transformation definitions
+* Consider access, sensitivity, and appropriate use of healthcare operational data
+* Define escalation when data cannot be trusted
+
+### Analytics
+
+* Use the curated data layer to answer selected healthcare access questions
+* Evaluate referral throughput, scheduling delays, bottlenecks, and operational performance
+* Demonstrate that downstream conclusions are supported by engineered and validated data
 
 ### Judgment
-- Distinguish what the evidence supports from what it does not support
-- Communicate limitations
-- Produce defensible management recommendations
+
+* Distinguish source-data problems from transformation problems
+* Determine when data is sufficiently trustworthy for downstream use
+* Communicate limitations and unresolved quality issues
+* Explain technical decisions in business language
+* Produce defensible recommendations based on validated data
+
+## Initial Data Flow
+
+**Source Data → Raw/Ingested → Validated/Staged → Transformed → Curated → Analytics**
+
+Each layer should have a clear purpose.
+
+The analytical output is not the primary product.
+
+The primary product is the **trusted data pipeline and curated data layer that make reliable analysis possible.**
 
 ## Development Principle
 
-Project 1 should remain achievable.
+Project 1 should remain achievable and evolve with my technical skills.
 
-It establishes the baseline for what correct joins, reasonable metrics, validation, clean-ish data, and defensible conclusions look like.
+The first version may use simple files, SQL, and manual execution.
+
+As my capabilities increase, the project may later incorporate:
+
+* Python
+* PySpark
+* Automated pipelines
+* Databricks
+* Lakehouse architecture
+* Orchestration
+* Monitoring
+* Additional governance and security controls
+
+Earlier versions should be preserved where useful to demonstrate technical growth.
 
 ### Judgment Goal
 
-**Trust carefully.**
+**Engineer trust.**
+
 
 ---
 
