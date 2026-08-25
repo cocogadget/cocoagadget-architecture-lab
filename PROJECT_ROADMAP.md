@@ -292,7 +292,131 @@ Project 3:
 
 Now that I understand the problem, what should the organization do?
 
+## Future Job-Posting-Inspired Engineering Builds
+
+These projects are inspired by real engineering problems described in job postings.
+
+The goal is not to reproduce a company's proprietary systems. Each project will build a small, original system around the underlying engineering problem in order to practice system design, data engineering, reliability, testing, documentation, and technical decision-making.
+
+
+
+
+
+### Instacart-Inspired Virtual Store / Digital Twin
+
+**Theme:** Physical World → Data → Digital State
+
+Build a simplified virtual representation of a physical retail store and the data pipelines required to keep that representation synchronized with changing real-world conditions.
+
+The project will explore how observations from a physical environment can be ingested, validated, transformed, reconciled, and used to maintain a trustworthy digital representation of current store state.
+
+#### Core Questions
+
+- How should physical store entities such as products, shelves, inventory, and locations be represented as data?
+- How does new observational data update the digital state?
+- How can discrepancies between expected and observed state be detected?
+- What happens when observations are missing, duplicated, delayed, or contradictory?
+- How can the system determine whether its current representation can be trusted?
+
+#### Engineering Concepts
+
+- Data modeling
+- Batch and/or event ingestion
+- Data pipelines
+- State management
+- Data validation
+- Reconciliation
+- Data quality
+- Observability
+- Failure handling
+- Documentation and lineage
+
+#### Planned Failure Scenarios
+
+The project will intentionally introduce problems such as:
+
+- Duplicate observations
+- Missing observations
+- Stale inventory data
+- Invalid product identifiers
+- Conflicting state updates
+- Delayed events
+- Schema changes
+
+Failures will be detected, investigated, repaired, validated, and documented.
+
+#### Goal
+
+Demonstrate the ability to build a small data system that translates changing real-world conditions into a reliable digital representation.
+
 ---
+
+### Pinterest-Inspired Data Pipeline / Warehouse Authoring System
+
+**Theme:** Raw Data → Reliable Data Products
+
+Build a small data platform that ingests raw data, transforms it into trusted analytical datasets, tests data quality, and makes the resulting data available for downstream analysis.
+
+The project will focus not only on creating a successful pipeline, but also on understanding how the system behaves when something goes wrong.
+
+#### Core Questions
+
+- How does raw data enter the system?
+- How should transformations be organized and documented?
+- How can data quality be tested automatically?
+- How should dependencies between transformations be managed?
+- What happens when a pipeline partially fails?
+- How can failed processing be safely restarted?
+- How can another engineer understand and operate the system?
+
+#### Engineering Concepts
+
+- Data ingestion
+- SQL transformations
+- Data modeling
+- ELT/ETL
+- Pipeline orchestration
+- Dependency management
+- Data quality testing
+- Logging and observability
+- Failure recovery
+- Idempotency
+- Documentation and lineage
+
+#### Planned Failure Scenarios
+
+The project will intentionally introduce problems such as:
+
+- Broken joins
+- Duplicate records
+- Missing values
+- Schema drift
+- Invalid mappings
+- Failed transformations
+- Late-arriving data
+- Partial pipeline failures
+
+Each failure will be traced from symptom to root cause, repaired, validated, and documented.
+
+#### Independent Handoff Test
+
+The completed system should contain enough documentation, logging, lineage, and operational guidance that another technically competent person can:
+
+1. Understand what the pipeline is intended to do.
+2. Determine where a failure occurred.
+3. Identify the affected data.
+4. Safely repair or restart processing.
+5. Validate that the system has recovered.
+
+#### Goal
+
+Demonstrate the ability to build, operate, troubleshoot, and document a maintainable data pipeline rather than simply producing a successful final dataset.
+
+
+
+
+
+
 
 # Longitudinal Critical-Infrastructure Architecture Laboratory
 
